@@ -1,11 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
+<AnchorPane prefHeight="776.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
    <children>
-      <Text layoutX="194.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOLA!!!" />
+      <ImageView fitHeight="847.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/mainPage1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="243.0" layoutX="66.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/cookTimeWL.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="56.0" layoutY="273.0" prefHeight="319.0" prefWidth="314.0" spacing="30.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="375.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" size="2.5EM" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Users">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <effect>
+                  <Glow level="0.0" />
+               </effect>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="334.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="2.5EM" HBox.hgrow="ALWAYS" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Chef requests">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <effect>
+                  <Glow level="0.0" />
+               </effect>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="375.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SPOON" size="2.5EM" HBox.hgrow="ALWAYS" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Companies">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <effect>
+                  <Glow level="0.0" />
+               </effect>
+            </Button>
+         </children>
+      </VBox>
+      <HBox fx:id="btnClose" alignment="CENTER" layoutX="1172.0" layoutY="17.0" onMouseClicked="#close" spacing="10.0">
+         <children>
+            <FontAwesomeIcon fill="#a12592" glyphName="CLOSE" size="2em" />
+            <Text fill="#c9548b" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: bold;" text="CLOSE" />
+         </children>
+         <opaqueInsets>
+            <Insets right="30.0" />
+         </opaqueInsets>
+      </HBox>
+      <Button fx:id="btnLogOut" layoutX="65.0" layoutY="653.0" mnemonicParsing="false" onAction="#logOut" prefHeight="49.0" prefWidth="242.0" style="-fx-background-color: #833283; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 1.5em; -fx-font-family: Quicksand;" text="Log out" textAlignment="CENTER">
+         <effect>
+            <DropShadow color="#551b6ed0" />
+         </effect>
+      </Button>
+      <Line endX="703.0" endY="-76.84999084472656" layoutX="577.0" layoutY="131.0" startX="-207.14337158203125" startY="-76.84999084472656" strokeWidth="1.5">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#195f80" />
+                  <Stop color="#6232a1" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text fill="#570b4e" layoutX="75.0" layoutY="61.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 2.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="221.6475606360492" />
+      <ScrollPane layoutX="371.0" layoutY="54.0" prefHeight="794.0" prefWidth="910.0">
+         <content>
+            <ListView fixedCellSize="0.0" prefHeight="791.0" prefWidth="904.0" style="-fx-background-color: transparent;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </ListView>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

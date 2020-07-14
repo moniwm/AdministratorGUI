@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     Scene mainPage;
+    Scene loginPage;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -25,7 +27,7 @@ public class Controller implements Initializable {
 
         Parent mainPageGUI = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
 
-        mainPage = new Scene(mainPageGUI);
+        mainPage = new Scene(mainPageGUI, 1280, 776);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
@@ -38,5 +40,17 @@ public class Controller implements Initializable {
 
         Stage window = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         window.close();
+    }
+
+    public void logOut(ActionEvent actionEvent) throws IOException {
+
+        Parent loginGUI = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+
+        loginPage = new Scene(loginGUI, 1280, 776);
+
+        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        window.setScene(loginPage);
+        window.show();
     }
 }
