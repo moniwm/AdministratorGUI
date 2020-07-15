@@ -3,130 +3,124 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="776.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
+<AnchorPane prefHeight="630.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
    <children>
-      <ImageView fitHeight="847.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="630.0" fitWidth="1260.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@images/mainPage1.png" />
+            <Image url="@images/mainPage.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="84.0" fitWidth="243.0" layoutX="66.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/cookTimeWL.png" />
-         </image>
-      </ImageView>
-      <VBox layoutX="56.0" layoutY="273.0" prefHeight="319.0" prefWidth="314.0" spacing="30.0">
+      <Pane layoutX="-3.0" layoutY="170.0" prefHeight="300.0" prefWidth="1260.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="375.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
-                     <children>
-                        <FontAwesomeIcon fill="WHITE" glyphName="USER" size="2.5EM" />
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Users">
-                           <font>
-                              <Font name="Verdana Bold" size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
-               </graphic>
-               <effect>
-                  <Glow level="0.0" />
-               </effect>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="63.0" prefWidth="334.0" style="-fx-background-color: transparent;">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
-                     <children>
-                        <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="2.5EM" HBox.hgrow="ALWAYS" />
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Chef requests">
-                           <font>
-                              <Font name="Verdana Bold" size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
-               </graphic>
-               <effect>
-                  <Glow level="0.0" />
-               </effect>
-            </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="375.0" style="-fx-background-color: transparent;">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: transparent;">
-                     <children>
-                        <FontAwesomeIcon fill="WHITE" glyphName="SPOON" size="2.5EM" HBox.hgrow="ALWAYS" />
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Companies">
-                           <font>
-                              <Font name="Verdana Bold" size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
-               </graphic>
-               <effect>
-                  <Glow level="0.0" />
-               </effect>
-            </Button>
+            <HBox layoutY="-1.0" spacing="175.0">
+               <children>
+                  <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#userPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
+                     <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" size="2.5em" />
+                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="users">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#3f1765" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btnChefRequest" mnemonicParsing="false" onAction="#chefsPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
+                     <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="2.5em" />
+                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="chef request">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#3f1765" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btnCompanies" mnemonicParsing="false" onAction="#companiesPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
+                     <graphic>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SPOON" size="2.5em" />
+                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="companies">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#3f1765" />
+                     </effect>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="65.0" right="75.0" top="80.0" />
+               </padding>
+            </HBox>
          </children>
-      </VBox>
-      <HBox fx:id="btnClose" alignment="CENTER" layoutX="1172.0" layoutY="17.0" onMouseClicked="#close" spacing="10.0">
+      </Pane>
+      <HBox fx:id="btnClose" alignment="CENTER" layoutX="1136.0" layoutY="587.0" onMouseClicked="#close" spacing="10.0">
          <children>
-            <FontAwesomeIcon fill="#a12592" glyphName="CLOSE" size="2em" />
-            <Text fill="#c9548b" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: bold;" text="CLOSE" />
+            <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="2em" />
+            <Text fill="#4c2579" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: bold;" text="CLOSE" />
          </children>
          <opaqueInsets>
             <Insets right="30.0" />
          </opaqueInsets>
       </HBox>
-      <Button fx:id="btnLogOut" layoutX="65.0" layoutY="653.0" mnemonicParsing="false" onAction="#logOut" prefHeight="49.0" prefWidth="242.0" style="-fx-background-color: #833283; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 1.5em; -fx-font-family: Quicksand;" text="Log out" textAlignment="CENTER">
-         <effect>
-            <DropShadow color="#551b6ed0" />
-         </effect>
-      </Button>
-      <Line endX="703.0" endY="-76.84999084472656" layoutX="577.0" layoutY="131.0" startX="-207.14337158203125" startY="-76.84999084472656" strokeWidth="1.5">
-         <stroke>
-            <LinearGradient endX="1.0" endY="1.0">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="107.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/cooktimeLogo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="879.0" layoutY="79.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 2.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="221.6475606360492">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.3269230769230769" startY="0.30288461538461536">
                <stops>
-                  <Stop color="#195f80" />
-                  <Stop color="#6232a1" offset="1.0" />
+                  <Stop color="#271e46" />
+                  <Stop color="#271e46" offset="0.007518796992481203" />
+                  <Stop color="#2f1e68" offset="0.40601503759398494" />
+                  <Stop color="#461857" offset="0.9097744360902256" />
+                  <Stop color="#461857" offset="1.0" />
                </stops>
             </LinearGradient>
-         </stroke>
-      </Line>
-      <Text fill="#570b4e" layoutX="75.0" layoutY="61.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 2.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="221.6475606360492" />
-      <ScrollPane layoutX="371.0" layoutY="54.0" prefHeight="794.0" prefWidth="910.0">
-         <content>
-            <ListView fixedCellSize="0.0" prefHeight="791.0" prefWidth="904.0" style="-fx-background-color: transparent;">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </ListView>
-         </content>
-      </ScrollPane>
+         </fill>
+      </Text>
+      <Button fx:id="btnLogOut" layoutX="1123.0" layoutY="48.0" mnemonicParsing="false" onAction="#logOut" prefHeight="37.0" prefWidth="113.0" style="-fx-background-color: #752C6A; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 1.5em; -fx-font-family: Quicksand;" text="Log out" textAlignment="CENTER" />
    </children>
 </AnchorPane>

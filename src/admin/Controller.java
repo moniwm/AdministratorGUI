@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     Scene mainPage;
-    Scene loginPage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -25,15 +24,17 @@ public class Controller implements Initializable {
 
     public void logIn(ActionEvent actionEvent) throws IOException {
 
-        Parent mainPageGUI = FXMLLoader.load(getClass().getResource("mainPage.fxml"));
+        changeScene(actionEvent, "mainPage.fxml",1260,630);
 
-        mainPage = new Scene(mainPageGUI, 1280, 776);
+    }
 
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    public void logOut(ActionEvent actionEvent) throws IOException {
 
-        window.setScene(mainPage);
-        window.show();
+        changeScene(actionEvent, "loginPage.fxml",1280,776);
+    }
 
+    public void goToMain(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "mainPage.fxml",1260,630);
     }
 
     public void close(MouseEvent mouseEvent) {
@@ -42,15 +43,32 @@ public class Controller implements Initializable {
         window.close();
     }
 
-    public void logOut(ActionEvent actionEvent) throws IOException {
 
-        Parent loginGUI = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
+    public void userPressed(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "users.fxml",1000,600);
+    }
 
-        loginPage = new Scene(loginGUI, 1280, 776);
+    public void chefsPressed(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "chefRequest.fxml",1000,600);
+    }
+
+    public void companiesPressed(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "companies.fxml",1000,600);
+
+    }
+
+    private void changeScene(ActionEvent actionEvent, String fxmlFile, int width, int height) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+
+        mainPage = new Scene(root, width, height);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
-        window.setScene(loginPage);
+        window.setScene(mainPage);
         window.show();
+        window.centerOnScreen();
+
     }
+
 }

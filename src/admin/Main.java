@@ -17,6 +17,7 @@ public class Main extends Application {
 
         window = primaryStage;
         window.initStyle(StageStyle.TRANSPARENT);
+        window.centerOnScreen();
 
         Parent loginGUI = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
         loginPage = new Scene(loginGUI, 1280, 776);
