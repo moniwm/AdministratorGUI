@@ -3,13 +3,12 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -18,97 +17,37 @@
 
 <AnchorPane prefHeight="630.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
    <children>
+      <ScrollPane layoutX="263.0" layoutY="40.0" prefHeight="590.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="40.0">
+         <content>
+            <AnchorPane fx:id="anchorLists" prefHeight="58.0" prefWidth="995.0" />
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="64.0" fitWidth="997.0" layoutX="264.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="263.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/header.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="630.0" fitWidth="1260.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@images/mainPage.png" />
          </image>
       </ImageView>
-      <Pane layoutX="-3.0" layoutY="170.0" prefHeight="300.0" prefWidth="1260.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/cooktimeLogo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnLogOut" layoutX="74.0" layoutY="575.0" mnemonicParsing="false" onAction="#logOut" prefHeight="37.0" prefWidth="113.0" style="-fx-background-color: #6E4267; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 1.5em; -fx-font-family: Quicksand;" text="Log out" textAlignment="CENTER" />
+      <HBox fx:id="btnClose" alignment="CENTER" layoutX="1147.0" layoutY="7.0" onMouseClicked="#close" spacing="10.0">
          <children>
-            <HBox layoutY="-1.0" spacing="175.0">
-               <children>
-                  <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#userPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
-                     <graphic>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                           <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" size="2.5em" />
-                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="users">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                                 <effect>
-                                    <Reflection />
-                                 </effect>
-                              </Text>
-                           </children>
-                        </VBox>
-                     </graphic>
-                     <effect>
-                        <DropShadow color="#3f1765" />
-                     </effect>
-                  </Button>
-                  <Button fx:id="btnChefRequest" mnemonicParsing="false" onAction="#chefsPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
-                     <graphic>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                           <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="2.5em" />
-                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="chef request">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                                 <effect>
-                                    <Reflection />
-                                 </effect>
-                              </Text>
-                           </children>
-                        </VBox>
-                     </graphic>
-                     <effect>
-                        <DropShadow color="#3f1765" />
-                     </effect>
-                  </Button>
-                  <Button fx:id="btnCompanies" mnemonicParsing="false" onAction="#companiesPressed" prefHeight="130.0" prefWidth="260.0" style="-fx-background-color: #74477E; -fx-background-radius: 50;">
-                     <graphic>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                           <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="SPOON" size="2.5em" />
-                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="companies">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                                 <effect>
-                                    <Reflection />
-                                 </effect>
-                              </Text>
-                           </children>
-                        </VBox>
-                     </graphic>
-                     <effect>
-                        <DropShadow color="#3f1765" />
-                     </effect>
-                  </Button>
-               </children>
-               <padding>
-                  <Insets left="65.0" right="75.0" top="80.0" />
-               </padding>
-            </HBox>
-         </children>
-      </Pane>
-      <HBox fx:id="btnClose" alignment="CENTER" layoutX="1136.0" layoutY="587.0" onMouseClicked="#close" spacing="10.0">
-         <children>
-            <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="2em" />
+            <FontAwesomeIcon fill="#723465" glyphName="CLOSE" size="2em" />
             <Text fill="#4c2579" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 1.5em; -fx-font-family: bold;" text="CLOSE" />
          </children>
          <opaqueInsets>
             <Insets right="30.0" />
          </opaqueInsets>
       </HBox>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="107.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/cooktimeLogo.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="879.0" layoutY="79.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 2.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="221.6475606360492">
+      <Text layoutX="17.0" layoutY="47.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 1.5em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="215.5262227454242">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3269230769230769" startY="0.30288461538461536">
                <stops>
@@ -121,6 +60,61 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button fx:id="btnLogOut" layoutX="1123.0" layoutY="48.0" mnemonicParsing="false" onAction="#logOut" prefHeight="37.0" prefWidth="113.0" style="-fx-background-color: #752C6A; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 1.5em; -fx-font-family: Quicksand;" text="Log out" textAlignment="CENTER" />
+      <VBox layoutY="145.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#userPressed" prefHeight="27.0" prefWidth="265.0" style="-fx-background-color: #8B77A6;">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="247.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIcon glyphName="USER" size="1.5em" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTERED USERS" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnChefs" mnemonicParsing="false" onAction="#chefsPressed" prefHeight="27.0" prefWidth="265.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="247.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIcon glyphName="CHECK" size="1.5em" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CHEF REQUESTS" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnCompanies" mnemonicParsing="false" onAction="#companiesPressed" prefHeight="27.0" prefWidth="265.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="247.0" spacing="10.0">
+                     <children>
+                        <FontAwesomeIcon glyphName="HOME" size="1.5em" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTERED COMPANIES" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="labelTitle" layoutX="295.0" layoutY="6.0" text="REGISTERED USERS">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.4326923076923077" startY="0.24519230769230768">
+               <stops>
+                  <Stop color="#51397c" />
+                  <Stop color="#4e5e80" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="FontAwesome Regular" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

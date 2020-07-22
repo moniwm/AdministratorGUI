@@ -1,12 +1,18 @@
 package admin;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +22,14 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     Scene mainPage;
+
+    public Button btnUsers;
+    public Button btnCompanies;
+    public Button btnChefs;
+
+    public Label labelTitle;
+
+    public AnchorPane anchorLists;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,16 +58,34 @@ public class Controller implements Initializable {
     }
 
 
-    public void userPressed(ActionEvent actionEvent) throws IOException {
-        changeScene(actionEvent, "users.fxml",1000,600);
+    public void userPressed() {
+
+        btnUsers.setStyle("-fx-background-color:  #8B77A6");
+        btnChefs.setStyle("-fx-background-color: transparent");
+        btnCompanies.setStyle("-fx-background-color: transparent");
+
+        labelTitle.setText("REGISTERED USERS");
+
     }
 
-    public void chefsPressed(ActionEvent actionEvent) throws IOException {
-        changeScene(actionEvent, "chefRequest.fxml",1000,600);
+    public void chefsPressed() {
+
+        btnChefs.setStyle("-fx-background-color:  #8B77A6");
+        btnUsers.setStyle("-fx-background-color: transparent");
+        btnCompanies.setStyle("-fx-background-color: transparent");
+
+        labelTitle.setText("CHEF REQUESTS");
+
     }
 
-    public void companiesPressed(ActionEvent actionEvent) throws IOException {
-        changeScene(actionEvent, "companies.fxml",1000,600);
+
+    public void companiesPressed() {
+
+        btnCompanies.setStyle("-fx-background-color:  #8B77A6");
+        btnUsers.setStyle("-fx-background-color: transparent");
+        btnChefs.setStyle("-fx-background-color: transparent");
+
+        labelTitle.setText("REGISTERED COMPANIES");
 
     }
 
@@ -70,5 +102,7 @@ public class Controller implements Initializable {
         window.centerOnScreen();
 
     }
+
+
 
 }
