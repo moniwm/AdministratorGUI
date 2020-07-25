@@ -1,8 +1,11 @@
 package AdminClient;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,10 +30,9 @@ public class AdminClient {
         return result.toString();
     }
 
-    public static void main(String[] args) throws Exception
-    {
+    public ObservableList<Users> getRegisteredUsers() throws Exception {
 
-        ArrayList<Users> users = new ArrayList<Users>();
+        ObservableList<Users> users = FXCollections.observableArrayList();
         String name;
         String email;
         String password;
@@ -55,7 +57,7 @@ public class AdminClient {
             users.add(user);
         }
 
-        System.out.println(users.toString());
+        return users;
 
 
     }

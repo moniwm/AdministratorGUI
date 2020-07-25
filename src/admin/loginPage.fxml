@@ -28,7 +28,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </FontAwesomeIcon>
-                        <TextField prefHeight="46.0" prefWidth="471.0" promptText="username" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="adminEmail" prefHeight="46.0" prefWidth="471.0" promptText="username" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" HBox.hgrow="ALWAYS" />
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -41,7 +41,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </FontAwesomeIcon>
-                        <PasswordField prefHeight="84.0" prefWidth="442.0" promptText="password" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" />
+                        <PasswordField fx:id="adminPassword" prefHeight="84.0" prefWidth="442.0" promptText="password" style="-fx-background-color: transparent; -fx-text-fill: WHITE;" />
                      </children>
                      <opaqueInsets>
                         <Insets />

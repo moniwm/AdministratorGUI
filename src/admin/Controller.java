@@ -1,5 +1,7 @@
 package admin;
 
+import AdminClient.AdminClient;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,9 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import AdminClient.Users;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,9 +28,11 @@ public class Controller implements Initializable {
     public Button btnUsers;
     public Button btnCompanies;
     public Button btnChefs;
-
     public Label labelTitle;
+    public TextField adminEmail;
+    public PasswordField adminPassword;
 
+    private AdminClient adminClient = new AdminClient();
     public AnchorPane anchorLists;
 
     @Override
@@ -33,9 +40,13 @@ public class Controller implements Initializable {
 
     }
 
-    public void logIn(ActionEvent actionEvent) throws IOException {
+    public void logIn(ActionEvent actionEvent) throws Exception {
+
+        System.out.println(adminEmail.getText());
+        System.out.println(adminPassword.getText());
 
         changeScene(actionEvent, "mainPage.fxml",1260,630);
+
 
     }
 
@@ -100,6 +111,7 @@ public class Controller implements Initializable {
 
     }
 
-
-
+    private ObservableList<Users> getUpdatedUsers() throws Exception {
+        return adminClient.getRegisteredUsers();
+    }
 }
