@@ -7,13 +7,29 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 
 public class AdminClient {
 
+    JSONParser parser = new JSONParser();
+    ObservableList<Users> users = FXCollections.observableArrayList();
+    ObservableList<ChefRequest> chefRequests = FXCollections.observableArrayList();
+
+    /*public static void loadJSON() throws IOException {
+        URL urlPost = new URL("http://localhost:8080/CookTime.BackEnd/api/users/load");
+        URLConnection con = urlPost.openConnection();
+        HttpURLConnection http = (HttpURLConnection)con;
+        http.setRequestMethod("POST"); // PUT is another valid option
+        http.setDoOutput(true);
+    }*/
+
     public static String getHTML(String urlToRead) throws Exception {
+
+
         StringBuilder result = new StringBuilder();
         URL url = new URL(urlToRead);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -30,20 +46,20 @@ public class AdminClient {
 
     public ObservableList<Users> getRegisteredUsers() throws Exception {
 
-        ObservableList<Users> users = FXCollections.observableArrayList();
+
         String name;
         String email;
         String password;
         boolean chef;
         boolean admin;
 
-        JSONParser parser = new JSONParser();
+
         JSONArray json = (JSONArray) parser.parse(getHTML("http://localhost:8080/CookTime.BackEnd/api/users"));
 
 
         for (int i = 0; i < json.size(); i++){
 
-            JSONObject item = (JSONObject) parser.parse(json.get(i).toString());
+            JSONObject  item = (JSONObject) parser.parse(json.get(i).toString());
 
             name = item.get("name").toString();
             email = item.get("email").toString();
@@ -59,6 +75,22 @@ public class AdminClient {
 
         return users;
 
+    }
+
+    public ObservableList<ChefRequest> getChefRequest() throws Exception {
+
+        JSONArray json = (JSONArray) parser.parse(getHTML("http://localhost:8080/CookTime.BackEnd/api/users/get_chef_request/admin"));
+        String email;
+        String text;
+
+        JSONObject  item = (JSONObject) parser.parse(json.get(0).toString());
+
+        text = item.get("text").toString();
+        email = item.get("email").toString();
+
+        chefRequests.add(new ChefRequest(email, text));
+
+        return chefRequests;
 
     }
 }

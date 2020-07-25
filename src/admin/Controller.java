@@ -1,6 +1,7 @@
 package admin;
 
 import AdminClient.AdminClient;
+import AdminClient.Users;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,15 +9,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import AdminClient.Users;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
@@ -32,9 +31,15 @@ public class Controller implements Initializable {
     public Label labelTitle;
     public TextField adminEmail;
     public PasswordField adminPassword;
+    public VBox canvas;
+    public Text welcome;
+    public Text administratorText;
 
+    private TableView<Users> usersTable = new TableView<Users>();
+    private TableView<Users> chefsTable = new TableView<Users>();
     private AdminClient adminClient = new AdminClient();
-    public AnchorPane anchorLists;
+    private boolean isChefPressed = false;
+    private boolean isUsersPressed = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,10 +51,8 @@ public class Controller implements Initializable {
         System.out.println(adminEmail.getText());
         System.out.println(adminPassword.getText());
         getUpdatedUsers();
-        displayAlertBox();
 
         changeScene(actionEvent, "mainPage.fxml",1260,630);
-
 
     }
 
@@ -69,12 +72,37 @@ public class Controller implements Initializable {
     }
 
 
-    public void userPressed() {
+    public void userPressed() throws Exception {
 
         btnUsers.setStyle("-fx-background-color:  #8B77A6");
         btnChefs.setStyle("-fx-background-color: transparent");
 
         labelTitle.setText("REGISTERED USERS");
+
+        removeWelcomeMessage();
+
+
+        TableColumn<Users, String> nameColumn = new TableColumn<>("Name");
+        nameColumn.setMinWidth(350);
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+        TableColumn<Users, String> emailColumn = new TableColumn<>("Email");
+        emailColumn.setMinWidth(335);
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        TableColumn<Users, Boolean> chefColumn = new TableColumn<>("Chef");
+        chefColumn.setMinWidth(150);
+        chefColumn.setCellValueFactory(new PropertyValueFactory<>("chef"));
+
+        TableColumn<Users, Boolean> adminColumn = new TableColumn<>("Admin");
+        adminColumn.setMinWidth(150);
+        adminColumn.setCellValueFactory(new PropertyValueFactory<>("admin"));
+
+        this.usersTable.setItems(this.getUpdatedUsers());
+        this.usersTable.getColumns().addAll(nameColumn, emailColumn, chefColumn, adminColumn);
+
+        canvas.getChildren().remove(usersTable);
+        canvas.getChildren().add(usersTable);
 
     }
 
@@ -84,6 +112,9 @@ public class Controller implements Initializable {
         btnUsers.setStyle("-fx-background-color: transparent");
 
         labelTitle.setText("CHEF REQUESTS");
+
+        removeWelcomeMessage();
+        canvas.getChildren().remove(usersTable);
 
     }
 
@@ -122,4 +153,9 @@ public class Controller implements Initializable {
         Stage alertBox= (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         alertBox.close();
     }
+
+    public void removeWelcomeMessage(){
+        canvas.getChildren().removeAll(welcome, administratorText);
+    }
+
 }

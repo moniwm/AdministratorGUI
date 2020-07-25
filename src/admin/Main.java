@@ -1,5 +1,6 @@
 package admin;
 
+import AdminClient.AdminClient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,8 @@ public class Main extends Application {
         window = primaryStage;
         window.initStyle(StageStyle.TRANSPARENT);
         window.centerOnScreen();
+
+        //AdminClient.loadJSON();
 
         Parent loginGUI = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
         loginPage = new Scene(loginGUI, 1280, 776);
