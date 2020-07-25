@@ -5,13 +5,11 @@ import javafx.collections.ObservableList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class AdminClient {
 
@@ -56,6 +54,8 @@ public class AdminClient {
             Users user = new Users(name, email, password, chef, admin);
             users.add(user);
         }
+
+        System.out.println(users);
 
         return users;
 

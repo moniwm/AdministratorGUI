@@ -28,7 +28,6 @@ public class Controller implements Initializable {
     Scene mainPage;
 
     public Button btnUsers;
-    public Button btnCompanies;
     public Button btnChefs;
     public Label labelTitle;
     public TextField adminEmail;
@@ -46,6 +45,8 @@ public class Controller implements Initializable {
 
         System.out.println(adminEmail.getText());
         System.out.println(adminPassword.getText());
+        getUpdatedUsers();
+        displayAlertBox();
 
         changeScene(actionEvent, "mainPage.fxml",1260,630);
 
@@ -72,7 +73,6 @@ public class Controller implements Initializable {
 
         btnUsers.setStyle("-fx-background-color:  #8B77A6");
         btnChefs.setStyle("-fx-background-color: transparent");
-        btnCompanies.setStyle("-fx-background-color: transparent");
 
         labelTitle.setText("REGISTERED USERS");
 
@@ -82,20 +82,8 @@ public class Controller implements Initializable {
 
         btnChefs.setStyle("-fx-background-color:  #8B77A6");
         btnUsers.setStyle("-fx-background-color: transparent");
-        btnCompanies.setStyle("-fx-background-color: transparent");
 
         labelTitle.setText("CHEF REQUESTS");
-
-    }
-
-
-    public void companiesPressed() {
-
-        btnCompanies.setStyle("-fx-background-color:  #8B77A6");
-        btnUsers.setStyle("-fx-background-color: transparent");
-        btnChefs.setStyle("-fx-background-color: transparent");
-
-        labelTitle.setText("REGISTERED COMPANIES");
 
     }
 

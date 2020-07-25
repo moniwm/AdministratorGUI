@@ -9,14 +9,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
    <children>
-      <ImageView fitHeight="200.0" fitWidth="300.0" layoutY="4.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="300.0" fitWidth="500.0" layoutY="4.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@images/changePP.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="-1.0" prefHeight="200.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="-1.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text layoutX="105.0" layoutY="24.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 1.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="102.51905111456483">
                <fill>
@@ -36,9 +36,9 @@
                   <Image url="@images/cookTimeWL.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40526e89" height="98.0" layoutX="30.0" layoutY="43.0" stroke="TRANSPARENT" strokeType="INSIDE" width="238.0" />
-            <Text fill="WHITE" layoutX="82.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong email or password" />
-            <Button fx:id="btnTry" layoutX="105.0" layoutY="90.0" mnemonicParsing="false" onAction="#closeAlert" prefHeight="20.0" prefWidth="90.0" style="-fx-background-color: #71C1BE; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 10; -fx-font-family: Quicksand;" text="Try again" textAlignment="CENTER" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40526e89" height="98.0" layoutX="30.0" layoutY="43.0" stroke="TRANSPARENT" strokeType="INSIDE" width="238.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="100.0" />
+            <Text fill="WHITE" layoutX="82.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong email or password" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="280.0908203125" AnchorPane.topAnchor="110.0" />
+            <Button fx:id="btnTry" layoutX="105.0" layoutY="90.0" mnemonicParsing="false" onAction="#closeAlert" prefHeight="20.0" prefWidth="90.0" style="-fx-background-color: #71C1BE; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 10; -fx-font-family: Quicksand;" text="Try again" textAlignment="CENTER" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="150.0" />
          </children>
       </AnchorPane>
    </children>

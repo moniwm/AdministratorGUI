@@ -88,19 +88,6 @@
                   </HBox>
                </graphic>
             </Button>
-            <Button fx:id="btnCompanies" mnemonicParsing="false" onAction="#companiesPressed" prefHeight="27.0" prefWidth="265.0" style="-fx-background-color: transparent;">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="247.0" spacing="10.0">
-                     <children>
-                        <FontAwesomeIcon glyphName="HOME" size="1.5em" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTERED COMPANIES" />
-                     </children>
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </HBox>
-               </graphic>
-            </Button>
          </children>
       </VBox>
       <Label fx:id="labelTitle" layoutX="295.0" layoutY="6.0" text="REGISTERED USERS">
