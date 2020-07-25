@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Controller">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="500.0" layoutY="4.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/changePP.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-1.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="105.0" layoutY="24.0" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder; -fx-font-size: 1.0em;" text="ADMINISTRATOR" textAlignment="CENTER" wrappingWidth="102.51905111456483">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.3269230769230769" startY="0.30288461538461536">
+                     <stops>
+                        <Stop color="#271e46" />
+                        <Stop color="#271e46" offset="0.007518796992481203" />
+                        <Stop color="#2f1e68" offset="0.40601503759398494" />
+                        <Stop color="#461857" offset="0.9097744360902256" />
+                        <Stop color="#461857" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <ImageView fitHeight="34.0" fitWidth="100.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cookTimeWL.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#40526e89" height="98.0" layoutX="30.0" layoutY="43.0" stroke="TRANSPARENT" strokeType="INSIDE" width="238.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="100.0" />
+            <Text fill="WHITE" layoutX="82.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong email or password" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="280.0908203125" AnchorPane.topAnchor="110.0" />
+            <Button fx:id="btnTry" layoutX="105.0" layoutY="90.0" mnemonicParsing="false" onAction="#closeAlert" prefHeight="20.0" prefWidth="90.0" style="-fx-background-color: #71C1BE; -fx-background-radius: 100; -fx-text-fill: WHITE; -fx-font-size: 10; -fx-font-family: Quicksand;" text="Try again" textAlignment="CENTER" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

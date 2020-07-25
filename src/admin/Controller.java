@@ -14,8 +14,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import AdminClient.Users;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -113,5 +115,23 @@ public class Controller implements Initializable {
 
     private ObservableList<Users> getUpdatedUsers() throws Exception {
         return adminClient.getRegisteredUsers();
+    }
+
+    private void displayAlertBox() throws IOException {
+        Stage alertBox = new Stage();
+        alertBox.initStyle(StageStyle.TRANSPARENT);
+        alertBox.centerOnScreen();
+
+        alertBox.initModality(Modality.APPLICATION_MODAL);
+
+        Scene alertBoxScene = new Scene(FXMLLoader.load(getClass().getResource("checkBox.fxml")),300,200);
+        alertBox.setScene(alertBoxScene);
+
+        alertBox.show();
+    }
+
+    public void closeAlert(ActionEvent actionEvent) {
+        Stage alertBox= (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        alertBox.close();
     }
 }
