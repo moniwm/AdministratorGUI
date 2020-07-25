@@ -13,4 +13,25 @@ public class ChefRequest {
         this.text = text;
         this.button = new Button("Accept");
     }
+
+    public String getEmail(){
+        return this.email;
+    }
+
+    public String getText(){
+        return this.text;
+    }
+
+   public Button getButton(){
+        return this.button;
+   }
+
+    @Override
+    public String toString() {
+        return "ChefRequest{" +
+                "email='" + email + '\'' +
+                ", text='" + text + '\'' +
+                ", button=" + button +
+                '}';
+    }
 }

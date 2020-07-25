@@ -2,6 +2,8 @@ package admin;
 
 import AdminClient.AdminClient;
 import AdminClient.Users;
+import AdminClient.ChefRequest;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +38,8 @@ public class Controller implements Initializable {
     public Text administratorText;
 
     private TableView<Users> usersTable = new TableView<Users>();
-    private TableView<Users> chefsTable = new TableView<Users>();
+    private TableView<ChefRequest>  chefsTable = new TableView<ChefRequest>();
+    private ObservableList<ChefRequest> chefRequest = FXCollections.observableArrayList();
     private AdminClient adminClient = new AdminClient();
     private boolean isChefPressed = false;
     private boolean isUsersPressed = false;
@@ -102,11 +105,12 @@ public class Controller implements Initializable {
         this.usersTable.getColumns().addAll(nameColumn, emailColumn, chefColumn, adminColumn);
 
         canvas.getChildren().remove(usersTable);
+        canvas.getChildren().remove(chefsTable);
         canvas.getChildren().add(usersTable);
 
     }
 
-    public void chefsPressed() {
+    public void chefsPressed() throws Exception {
 
         btnChefs.setStyle("-fx-background-color:  #8B77A6");
         btnUsers.setStyle("-fx-background-color: transparent");
@@ -115,6 +119,27 @@ public class Controller implements Initializable {
 
         removeWelcomeMessage();
         canvas.getChildren().remove(usersTable);
+
+        TableColumn<ChefRequest, String> email = new TableColumn<>("User");
+        email.setMinWidth(350);
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        TableColumn<ChefRequest, String> textColumn = new TableColumn<>("Why chef?");
+        textColumn.setMinWidth(335);
+        textColumn.setCellValueFactory(new PropertyValueFactory<>("text"));
+
+        TableColumn<ChefRequest, Button> buttonColumn = new TableColumn<>("Accept");
+        buttonColumn.setMinWidth(150);
+        buttonColumn.setCellValueFactory(new PropertyValueFactory<>("button"));
+
+        this.chefsTable.setItems(chefRequest);
+        this.chefsTable.getColumns().addAll(email, textColumn, buttonColumn);
+
+
+
+        canvas.getChildren().remove(chefsTable);
+        canvas.getChildren().remove(usersTable);
+        canvas.getChildren().add(chefsTable);
 
     }
 
