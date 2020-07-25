@@ -36,6 +36,8 @@ public class Controller implements Initializable {
     public VBox canvas;
     public Text welcome;
     public Text administratorText;
+    private String adminName = "mwaterhouse";
+    private String password = "hola";
 
     private TableView<Users> usersTable = new TableView<Users>();
     private TableView<ChefRequest>  chefsTable = new TableView<ChefRequest>();
@@ -53,10 +55,14 @@ public class Controller implements Initializable {
 
         System.out.println(adminEmail.getText());
         System.out.println(adminPassword.getText());
-        getUpdatedUsers();
 
-        changeScene(actionEvent, "mainPage.fxml",1260,630);
-
+        if(adminEmail.getText().equals(adminName) && adminPassword.getText().equals(password)){
+            getUpdatedUsers();
+            changeScene(actionEvent, "mainPage.fxml",1260,630);
+        }
+        else{
+            displayAlertBox();
+        }
     }
 
     public void logOut(ActionEvent actionEvent) throws IOException {
@@ -136,7 +142,6 @@ public class Controller implements Initializable {
         this.chefsTable.getColumns().addAll(email, textColumn, buttonColumn);
 
 
-
         canvas.getChildren().remove(chefsTable);
         canvas.getChildren().remove(usersTable);
         canvas.getChildren().add(chefsTable);
@@ -168,7 +173,7 @@ public class Controller implements Initializable {
 
         alertBox.initModality(Modality.APPLICATION_MODAL);
 
-        Scene alertBoxScene = new Scene(FXMLLoader.load(getClass().getResource("checkBox.fxml")),300,200);
+        Scene alertBoxScene = new Scene(FXMLLoader.load(getClass().getResource("checkBox.fxml")),500,300);
         alertBox.setScene(alertBoxScene);
 
         alertBox.show();

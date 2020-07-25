@@ -16,7 +16,6 @@ import java.net.URLConnection;
 public class AdminClient {
 
     JSONParser parser = new JSONParser();
-    ObservableList<Users> users = FXCollections.observableArrayList();
     ObservableList<ChefRequest> chefRequests = FXCollections.observableArrayList();
 
     /*public static void loadJSON() throws IOException {
@@ -46,7 +45,8 @@ public class AdminClient {
 
     public ObservableList<Users> getRegisteredUsers() throws Exception {
 
-
+        ObservableList<Users> users = FXCollections.observableArrayList();
+        
         String name;
         String email;
         String password;
